@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Menu</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .menu {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(49, 18, 18, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .menu-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .menu-category {
+            flex: 1 1 calc(50% - 20px);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #e6dcdc;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-category:hover {
+            transform: scale(1.02);
+        }
+
+        .menu-category h3 {
+            text-transform: uppercase;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            position: relative; 
+        }
+
+        .item {
+            font-weight: bold;
+            cursor: pointer;
+            color: #999b16;
+            flex-grow: 1; 
+        }
+
+        .item:hover {
+            text-decoration: underline;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #333;
+            text-align: right;
+            min-width: 60px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .price.hidden {
+            display: none;
+        }
+
+        .price:hover {
+            color: #007BFF;
+            transform: scale(1.1);
+        }
+
+        .description {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+            display: none;
+        }
+
+        
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+       
+        @media (max-width: 480px) { 
+            .menu-category {
+                flex: 1 1 100%; 
+            }
+            h1, h2 {
+                font-size: 18px;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) { 
+            .menu-category {
+                flex: 1 1 100%; 
+            }
+            h1, h2 {
+                font-size: 20px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) { 
+            .menu-category {
+                flex: 1 1 calc(50% - 10px); 
+            }
+        }
+
+        @media (min-width: 1025px) and (max-width: 1200px) { 
+            .menu-category {
+                flex: 1 1 calc(33.33% - 20px); 
+            }
+        }
+
+        @media (min-width: 1201px) { 
+            .menu-category {
+                flex: 1 1 calc(25% - 20px); 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <h1>MENU</h1>
+        <h2>BURGUER SHOT</h2>
+        
+
+        <div class="menu-section">
+            <div class="menu-category">
+                <h3>CÁSICAS</h3>
+                <ul>
+                    <li>
+                        <span class="item">Simple</span>
+                        <span class="price">$1000</span>
+                        <div class="description">Carne, lechuga, tomate, cheddar</div>
+                    </li>
+                    <li>
+                        <span class="item">Especial</span>
+                        <span class="price">$1500</span>
+                        <div class="description">Carne, lechuga, tomate, cheddar, huevo</div>
+                    </li>
+                    <li>
+                        <span class="item">Completa</span>
+                        <span class="price">$2000</span>
+                        <div class="description">Carne, lechuga, tomate, cheddar, jamón, huevo</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="menu-category">
+                <h3>SMASHEADAS</h3>
+                <ul>
+                    <li>
+                        <span class="item">Chica</span>
+                        <span class="price">$1500</span>
+                        <div class="description">Carne 100g, lechuga, tomate, cheddar</div>
+                    </li>
+                    <li>
+                        <span class="item">Mediana</span>
+                        <span class="price">$2000</span>
+                        <div class="description">Carne 150g, lechuga, tomate, cheddar</div>
+                    </li>
+                    <li>
+                        <span class="item">Grande</span>
+                        <span class="price">$2500</span>
+                        <div class="description">Carne 200g, lechuga, tomate, cheddar</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="menu-category">
+        <h3>DE AUTOR</h3>
+        <ul>
+            <li>
+                <span class="item">Charly</span>
+                <span class="price">$2000</span>
+                <div class="description">Carne, lechuga, tomate,cheddar, pepino, huevo</div>
+            </li>
+            <li>
+                <span class="item">Spinetta</span>
+                <span class="price">$2500</span>
+                <div class="description">Doble carne, lechuga, tomate, cheddar, cebolla morada, bacon</div>
+            </li>
+            <li>
+                <span class="item">Litto</span>
+                <span class="price">$3000</span>
+                <div class="description">Carne, cheddar, cebolla caramelizada, huevo</div>
+            </li>
+        </ul>
+    </div>
+    <div class="menu-category">
+        <h3>FLASHERAS</h3>
+        <ul>
+            <li>
+                <span class="item">Cuate</span>
+                <span class="price">$3000</span>
+                <div class="description">Doble carne, lechuga, tomate, cheddar, bacon, huevo</div>
+            </li>
+            <li>
+                <span class="item">Chamaco</span>
+                <span class="price">$3500</span>
+                <div class="description">Triple carne, lechuga, tomate, cheddar, bacon, huevo</div>
+            </li>
+            <li>
+                <span class="item">Pibe</span>
+                <span class="price">$4000</span>
+                <div class="description">Cuatro carnes, lechuga, tomate, cheddar, bacon, huevo</div>
+            </li>
+        </ul>
+    </div>
+    <script>
+         document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.item');
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    const description = item.parentNode.querySelector('.description');
+                    const price = item.parentNode.querySelector('.price');
+
+                   
+                    description.style.display = description.style.display === 'block' ? 'none' : 'block';
+                    if (price) {
+                        price.classList.toggle('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
